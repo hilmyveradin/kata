@@ -24,6 +24,8 @@
 		014707B52C412BE3008443AD /* SECRETS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014707B42C412BE3008443AD /* SECRETS.swift */; };
 		014707B72C412BF0008443AD /* SECRETS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014707B62C412BF0008443AD /* SECRETS.swift */; };
 		014707B92C412CF8008443AD /* LocalizedLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014707B82C412CF8008443AD /* LocalizedLanguage.swift */; };
+		014707BC2C41561C008443AD /* ChatBotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014707BB2C41561C008443AD /* ChatBotView.swift */; };
+		014707BE2C415623008443AD /* ChatBotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014707BD2C415623008443AD /* ChatBotViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		014707B42C412BE3008443AD /* SECRETS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SECRETS.swift; path = "Arti-v2/SECRETS.swift"; sourceTree = SOURCE_ROOT; };
 		014707B62C412BF0008443AD /* SECRETS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SECRETS.swift; path = Keyboard/SECRETS.swift; sourceTree = SOURCE_ROOT; };
 		014707B82C412CF8008443AD /* LocalizedLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedLanguage.swift; sourceTree = "<group>"; };
+		014707BB2C41561C008443AD /* ChatBotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBotView.swift; sourceTree = "<group>"; };
+		014707BD2C415623008443AD /* ChatBotViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBotViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +163,7 @@
 		014707952C412134008443AD /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				014707BA2C415603008443AD /* ChatBot */,
 				014707982C412147008443AD /* Translate */,
 			);
 			path = Features;
@@ -195,6 +200,15 @@
 				014707B62C412BF0008443AD /* SECRETS.swift */,
 			);
 			path = SECRETS;
+			sourceTree = "<group>";
+		};
+		014707BA2C415603008443AD /* ChatBot */ = {
+			isa = PBXGroup;
+			children = (
+				014707BB2C41561C008443AD /* ChatBotView.swift */,
+				014707BD2C415623008443AD /* ChatBotViewModel.swift */,
+			);
+			path = ChatBot;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,9 +312,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				014707972C412142008443AD /* OpenAIService.swift in Sources */,
+				014707BE2C415623008443AD /* ChatBotViewModel.swift in Sources */,
 				014707B52C412BE3008443AD /* SECRETS.swift in Sources */,
 				014707782C4120E6008443AD /* MainTabView.swift in Sources */,
 				014707762C4120E6008443AD /* Arti_v2App.swift in Sources */,
+				014707BC2C41561C008443AD /* ChatBotView.swift in Sources */,
 				014707AB2C412228008443AD /* LocalizedString.swift in Sources */,
 				0147079A2C412150008443AD /* TranslateView.swift in Sources */,
 				0147079C2C412158008443AD /* TranslateViewModel.swift in Sources */,

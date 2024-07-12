@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct LocalizedStrings {
+enum LocalizedStrings {
     static let from = NSLocalizedString("From", comment: "")
     static let to = NSLocalizedString("To", comment: "")
     static let error = NSLocalizedString("Error", comment: "")

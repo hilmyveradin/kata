@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TranslateView: View {
     @StateObject private var viewModel = TranslateViewModel()
-    
+
     var body: some View {
         VStack(alignment: .center, spacing: 16) {
             switch viewModel.listeningState {
@@ -43,7 +43,7 @@ struct TranslateView: View {
         }
         .padding()
     }
-    
+
     private var languageSelectionView: some View {
         HStack {
             Spacer()
@@ -55,19 +55,18 @@ struct TranslateView: View {
         .frame(height: 48)
         .padding(.top, 48)
     }
-    
-    private func languagePicker(for selection: Binding<SelectedLanguage>) -> some View {
-            Picker("", selection: selection) {
-                ForEach(SelectedLanguage.allCases, id: \.self) { language in
-                    Text(LocalizedStrings.languageName(language)).tag(language)
-                }
-            }
-            .onChange(of: selection.wrappedValue) {
-                viewModel.resetStates()
-            }
 
+    private func languagePicker(for selection: Binding<SelectedLanguage>) -> some View {
+        Picker("", selection: selection) {
+            ForEach(SelectedLanguage.allCases, id: \.self) { language in
+                Text(LocalizedStrings.languageName(language)).tag(language)
+            }
+        }
+        .onChange(of: selection.wrappedValue) {
+            viewModel.resetStates()
+        }
     }
-    
+
     private var startTranslatingButton: some View {
         Button(action: {
             viewModel.startListeningState()
@@ -81,15 +80,15 @@ struct TranslateView: View {
                 )
         }
     }
-    
+
     private var listeningText: some View {
         Text(LocalizedStrings.listeningMessage(for: viewModel.languageOrigin))
     }
-    
+
     private var processingText: some View {
         Text(LocalizedStrings.processingMessage(for: viewModel.languageOrigin))
     }
-    
+
     private var translationResultView: some View {
         ScrollView(.vertical) {
             VStack(alignment: .leading, spacing: 16) {
@@ -98,7 +97,7 @@ struct TranslateView: View {
             }
         }
     }
-    
+
     private var translatedTextView: some View {
         VStack(alignment: .center) {
             Text(LocalizedStrings.translatedText(for: viewModel.languageDestination))
@@ -109,7 +108,7 @@ struct TranslateView: View {
                 .cornerRadius(8)
         }
     }
-    
+
     private var transcribedTextView: some View {
         VStack(alignment: .center) {
             Text(LocalizedStrings.transcribedText(for: viewModel.languageOrigin))
