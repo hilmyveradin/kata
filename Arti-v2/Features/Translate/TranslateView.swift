@@ -47,16 +47,16 @@ struct TranslateView: View {
     private var languageSelectionView: some View {
         HStack {
             Spacer()
-            languagePicker(for: $viewModel.languageOrigin, title: LocalizedStrings.from)
+            languagePicker(for: $viewModel.languageOrigin)
             Text("→")
-            languagePicker(for: $viewModel.languageDestination, title: LocalizedStrings.to)
+            languagePicker(for: $viewModel.languageDestination)
             Spacer()
         }
         .frame(height: 48)
         .padding(.top, 48)
     }
     
-    private func languagePicker(for selection: Binding<SelectedLanguage>, title: String) -> some View {
+    private func languagePicker(for selection: Binding<SelectedLanguage>) -> some View {
             Picker("", selection: selection) {
                 ForEach(SelectedLanguage.allCases, id: \.self) { language in
                     Text(LocalizedStrings.languageName(language)).tag(language)

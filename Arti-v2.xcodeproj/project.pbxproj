@@ -23,6 +23,7 @@
 		014707AB2C412228008443AD /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014707AA2C412228008443AD /* LocalizedString.swift */; };
 		014707B52C412BE3008443AD /* SECRETS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014707B42C412BE3008443AD /* SECRETS.swift */; };
 		014707B72C412BF0008443AD /* SECRETS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014707B62C412BF0008443AD /* SECRETS.swift */; };
+		014707B92C412CF8008443AD /* LocalizedLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014707B82C412CF8008443AD /* LocalizedLanguage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		014707AF2C4125D3008443AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		014707B42C412BE3008443AD /* SECRETS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SECRETS.swift; path = "Arti-v2/SECRETS.swift"; sourceTree = SOURCE_ROOT; };
 		014707B62C412BF0008443AD /* SECRETS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SECRETS.swift; path = Keyboard/SECRETS.swift; sourceTree = SOURCE_ROOT; };
+		014707B82C412CF8008443AD /* LocalizedLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedLanguage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 			children = (
 				014707AC2C41245B008443AD /* SECRETS */,
 				014707892C4120F7008443AD /* KeyboardViewController.swift */,
+				014707B82C412CF8008443AD /* LocalizedLanguage.swift */,
 				014707A32C41219D008443AD /* KeyboardView.swift */,
 				014707A52C4121A2008443AD /* KeyboardViewModel.swift */,
 				014707A72C4121A9008443AD /* OpenAIService.swift */,
@@ -313,6 +316,7 @@
 				014707A82C4121A9008443AD /* OpenAIService.swift in Sources */,
 				014707B72C412BF0008443AD /* SECRETS.swift in Sources */,
 				0147078A2C4120F7008443AD /* KeyboardViewController.swift in Sources */,
+				014707B92C412CF8008443AD /* LocalizedLanguage.swift in Sources */,
 				014707A62C4121A2008443AD /* KeyboardViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

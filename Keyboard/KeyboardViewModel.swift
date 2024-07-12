@@ -29,12 +29,13 @@ final class KeyboardViewModel: ObservableObject {
     @Published var destinationLanguage: SelectedLanguage = .english
     
     func translate() {
-        openAIService.translate(text: translatedText, destination: destinationLanguage) { [weak self] result in
+        openAIService.translate(text: selectedText, destination: destinationLanguage) { [weak self] result in
             guard let self = self else { return }
             DispatchQueue.main.async {
                 switch result {
                 case .success(let translatedText):
                     self.translatedText = translatedText
+                    self.isTextChanged = true
                 case .failure(_):
                     break
                 }
@@ -42,4 +43,8 @@ final class KeyboardViewModel: ObservableObject {
         }
     }
     
+    func resetStates() {
+        translatedText = ""
+        isTextChanged = false
+    }
 }

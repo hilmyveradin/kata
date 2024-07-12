@@ -20,15 +20,24 @@ struct KeyboardView: View {
                 .background(Color.blue)
                 .padding()
             
+            Picker("", selection: $viewModel.destinationLanguage) {
+                            ForEach(SelectedLanguage.allCases) { language in
+                                Text(LocalizedStrings.languageName(language)).tag(language)
+                            }
+                        }
+                        .onChange(of: viewModel.destinationLanguage) {
+                            viewModel.resetStates()
+                        }
+            
             Button(action: {
                 viewModel.translate()
             }, label: {
-                Text("translate")
+                Text("Translate")
             })
             
-            if viewModel.isTextChanged {
+            if viewModel.translatedText != "" {
                 Button(action: {
-                    viewModel.isTextChanged.toggle()
+                    viewModel.isTextChanged = true
                 }, label: {
                     Text("Change texts")
                 })

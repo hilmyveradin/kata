@@ -60,8 +60,7 @@ class KeyboardViewController: UIInputViewController {
         // Insert the translated text
         textDocumentProxy.insertText(viewModel.translatedText)
         
-        // Toggle isTextChanged back to false
-        viewModel.isTextChanged = false
+        viewModel.resetStates()
     }
     
     private var cancellables = Set<AnyCancellable>()
