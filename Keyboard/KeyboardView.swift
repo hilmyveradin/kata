@@ -13,11 +13,8 @@ struct KeyboardView: View {
     @ObservedObject var viewModel: KeyboardViewModel
 
     var body: some View {
-        VStack {
-            Text(
-                viewModel.translatedText)
-                .background(Color.blue)
-                .padding()
+        VStack(spacing: 8) {
+            Spacer()
 
             Picker("", selection: $viewModel.destinationLanguage) {
                 ForEach(SelectedLanguage.allCases) { language in
@@ -27,20 +24,28 @@ struct KeyboardView: View {
             .onChange(of: viewModel.destinationLanguage) {
                 viewModel.resetStates()
             }
-
+            
+            Spacer()
+            
             Button(action: {
                 viewModel.translate()
             }, label: {
                 Text("Translate")
             })
-
-            if viewModel.translatedText != "" {
-                Button(action: {
-                    viewModel.isTextChanged = true
-                }, label: {
-                    Text("Change texts")
-                })
-            }
+            .padding()
+            .tint(.gray)
+            .buttonStyle(.borderedProminent)
+            
+            Button(action: {
+                viewModel.fixGrammar()
+            }, label: {
+                Text("Fix Grammar")
+            })
+            .padding()
+            .tint(.gray)
+            .buttonStyle(.borderedProminent)
+            
+            Spacer()
         }
     }
 }

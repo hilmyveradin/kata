@@ -57,7 +57,7 @@ class KeyboardViewController: UIInputViewController {
         }
 
         // Insert the translated text
-        textDocumentProxy.insertText(viewModel.translatedText)
+        textDocumentProxy.insertText(viewModel.changedText)
 
         viewModel.resetStates()
     }

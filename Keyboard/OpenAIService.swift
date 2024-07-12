@@ -36,6 +36,25 @@ enum OpenAIServiceError: Error {
 class OpenAIService {
     private let apiKey: String = SECRETS.OpenAIKey
     private let baseURL = "https://api.openai.com/v1/chat/completions"
+    
+    func fixGrammar(text: String?, destination: SelectedLanguage, completion: @escaping (Result<String, OpenAIServiceError>) -> Void) {
+        guard let text = text else {
+            completion(.failure(.apiError("No sound detected")))
+            return
+        }
+        
+        let systemPrompt = "Fix this grammar based on this language: \(destination.rawValue). Remove any quotation marks in the response."
+
+        let request = OpenAIRequest(
+            model: "gpt-4o",
+            messages: [
+                Message(role: "system", content: systemPrompt),
+                Message(role: "user", content: text),
+            ]
+        )
+
+        performRequest(request: request, completion: completion)
+    }
 
     func translate(text: String?, destination: SelectedLanguage, completion: @escaping (Result<String, OpenAIServiceError>) -> Void) {
         guard let text = text else {
@@ -46,7 +65,7 @@ class OpenAIService {
         let systemPrompt = "Translate the following text from indonesia to \(destination.rawValue). Remove any quotation marks in the response."
 
         let request = OpenAIRequest(
-            model: "gpt-4",
+            model: "gpt-4o",
             messages: [
                 Message(role: "system", content: systemPrompt),
                 Message(role: "user", content: text),

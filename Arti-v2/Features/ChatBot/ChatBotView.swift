@@ -14,12 +14,12 @@ struct ChatBotView: View {
 
     var body: some View {
         VStack {
-            Text("Language-bot")
             Picker("", selection: $viewModel.selectedLanguage) {
                 ForEach(SelectedLanguage.allCases) { language in
                     Text(language.rawValue.capitalized).tag(language)
                 }
             }
+            .padding(.top, 24)
 
             ScrollView {
                 LazyVStack(spacing: 16) {

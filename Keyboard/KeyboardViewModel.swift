@@ -23,7 +23,7 @@ enum SelectedLanguage: String, CaseIterable, Identifiable {
 
 final class KeyboardViewModel: ObservableObject {
     private let openAIService = OpenAIService()
-    @Published var translatedText = ""
+    @Published var changedText = ""
     @Published var selectedText = ""
     @Published var isTextChanged = false
     @Published var destinationLanguage: SelectedLanguage = .english
@@ -33,8 +33,23 @@ final class KeyboardViewModel: ObservableObject {
             guard let self = self else { return }
             DispatchQueue.main.async {
                 switch result {
-                case let .success(translatedText):
-                    self.translatedText = translatedText
+                case let .success(changedText):
+                    self.changedText = changedText
+                    self.isTextChanged = true
+                case .failure:
+                    break
+                }
+            }
+        }
+    }
+    
+    func fixGrammar() {
+        openAIService.fixGrammar(text: selectedText, destination: destinationLanguage) { [weak self] result in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                switch result {
+                case let .success(changedText):
+                    self.changedText = changedText
                     self.isTextChanged = true
                 case .failure:
                     break
@@ -44,7 +59,7 @@ final class KeyboardViewModel: ObservableObject {
     }
 
     func resetStates() {
-        translatedText = ""
+        changedText = ""
         isTextChanged = false
     }
 }
