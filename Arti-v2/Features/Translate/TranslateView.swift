@@ -91,7 +91,7 @@ struct TranslateView: View {
 
     private var translationResultView: some View {
         ScrollView(.vertical) {
-            VStack(alignment: .leading, spacing: 16) {
+            VStack(alignment: .center, spacing: 16) {
                 translatedTextView
                 transcribedTextView
             }
@@ -100,10 +100,12 @@ struct TranslateView: View {
 
     private var translatedTextView: some View {
         VStack(alignment: .center) {
-            Text(LocalizedStrings.translatedText(for: viewModel.languageDestination))
+            Text(LocalizedStrings.translatedText(for: viewModel.languageOrigin))
                 .font(.headline)
+                .frame(minWidth: 250)
             Text(viewModel.translatedText ?? "")
                 .padding()
+                .frame(minWidth: 250)
                 .background(Color.gray.opacity(0.2))
                 .cornerRadius(8)
         }
@@ -113,8 +115,10 @@ struct TranslateView: View {
         VStack(alignment: .center) {
             Text(LocalizedStrings.transcribedText(for: viewModel.languageOrigin))
                 .font(.headline)
+                .frame(minWidth: 250)
             Text(viewModel.transcribedText ?? "")
                 .padding()
+                .frame(minWidth: 250)
                 .background(Color.gray.opacity(0.2))
                 .cornerRadius(8)
         }

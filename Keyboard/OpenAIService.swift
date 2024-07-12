@@ -62,7 +62,7 @@ class OpenAIService {
             return
         }
 
-        let systemPrompt = "Translate the following text from indonesia to \(destination.rawValue). Remove any quotation marks in the response."
+        let systemPrompt = "Translate the following text from it's language to \(destination.rawValue). Remove any quotation marks in the response."
 
         let request = OpenAIRequest(
             model: "gpt-4o",

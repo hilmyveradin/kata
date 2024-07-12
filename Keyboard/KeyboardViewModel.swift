@@ -26,9 +26,11 @@ final class KeyboardViewModel: ObservableObject {
     @Published var changedText = ""
     @Published var selectedText = ""
     @Published var isTextChanged = false
+    @Published var isLoading = false
     @Published var destinationLanguage: SelectedLanguage = .english
 
     func translate() {
+        isLoading = true
         openAIService.translate(text: selectedText, destination: destinationLanguage) { [weak self] result in
             guard let self = self else { return }
             DispatchQueue.main.async {
@@ -36,14 +38,16 @@ final class KeyboardViewModel: ObservableObject {
                 case let .success(changedText):
                     self.changedText = changedText
                     self.isTextChanged = true
+                    self.isLoading = false
                 case .failure:
-                    break
+                    self.isLoading = false
                 }
             }
         }
     }
     
     func fixGrammar() {
+        isLoading = true
         openAIService.fixGrammar(text: selectedText, destination: destinationLanguage) { [weak self] result in
             guard let self = self else { return }
             DispatchQueue.main.async {
@@ -51,8 +55,9 @@ final class KeyboardViewModel: ObservableObject {
                 case let .success(changedText):
                     self.changedText = changedText
                     self.isTextChanged = true
+                    self.isLoading = false
                 case .failure:
-                    break
+                    self.isLoading = false
                 }
             }
         }

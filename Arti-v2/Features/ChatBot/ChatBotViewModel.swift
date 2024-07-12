@@ -63,12 +63,11 @@ class ChatbotViewModel: ObservableObject {
         userInput = ""
     }
     
-    func speakMessage(_ message: String)  {
+    func speakMessage(_ message: String) {
+        speechSynthesizer.stopSpeaking(at: .immediate)
         let utterance = AVSpeechUtterance(string: message)
-        if let language = detectLanguageOf(text: message) {
-            utterance.voice = AVSpeechSynthesisVoice(language: language.rawValue)
-        }
-
+        let languageCode = self.languageCode(for: selectedLanguage)
+        utterance.voice = AVSpeechSynthesisVoice(language: languageCode)
         speechSynthesizer.speak(utterance)
     }
 

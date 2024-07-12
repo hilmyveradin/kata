@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct MainTabView: View {
     var body: some View {
@@ -19,6 +20,15 @@ struct MainTabView: View {
                 .tabItem {
                     Label("Chat", systemImage: "message")
                 }
+        }
+        .onAppear {
+            do {
+                try AVAudioSession.sharedInstance().setCategory(.playAndRecord, mode: .measurement, options: [.mixWithOthers, .defaultToSpeaker])
+                try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
+            } catch {
+                print("Failed to set up audio session: \(error)")
+                return
+            }
         }
     }
 }
