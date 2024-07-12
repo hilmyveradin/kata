@@ -16,13 +16,13 @@
 		014707972C412142008443AD /* OpenAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014707962C412142008443AD /* OpenAIService.swift */; };
 		0147079A2C412150008443AD /* TranslateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014707992C412150008443AD /* TranslateView.swift */; };
 		0147079C2C412158008443AD /* TranslateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0147079B2C412158008443AD /* TranslateViewModel.swift */; };
-		014707A02C41217B008443AD /* SECRETS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0147079F2C41217B008443AD /* SECRETS.swift */; };
 		014707A22C412198008443AD /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014707A12C412198008443AD /* Extension+UIView.swift */; };
 		014707A42C41219D008443AD /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014707A32C41219D008443AD /* KeyboardView.swift */; };
 		014707A62C4121A2008443AD /* KeyboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014707A52C4121A2008443AD /* KeyboardViewModel.swift */; };
 		014707A82C4121A9008443AD /* OpenAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014707A72C4121A9008443AD /* OpenAIService.swift */; };
 		014707AB2C412228008443AD /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014707AA2C412228008443AD /* LocalizedString.swift */; };
-		014707AE2C412462008443AD /* SECRETS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014707AD2C412462008443AD /* SECRETS.swift */; };
+		014707B52C412BE3008443AD /* SECRETS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014707B42C412BE3008443AD /* SECRETS.swift */; };
+		014707B72C412BF0008443AD /* SECRETS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014707B62C412BF0008443AD /* SECRETS.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,14 +61,14 @@
 		014707962C412142008443AD /* OpenAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIService.swift; sourceTree = "<group>"; };
 		014707992C412150008443AD /* TranslateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateView.swift; sourceTree = "<group>"; };
 		0147079B2C412158008443AD /* TranslateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewModel.swift; sourceTree = "<group>"; };
-		0147079F2C41217B008443AD /* SECRETS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SECRETS.swift; sourceTree = "<group>"; };
 		014707A12C412198008443AD /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
 		014707A32C41219D008443AD /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
 		014707A52C4121A2008443AD /* KeyboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewModel.swift; sourceTree = "<group>"; };
 		014707A72C4121A9008443AD /* OpenAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIService.swift; sourceTree = "<group>"; };
 		014707AA2C412228008443AD /* LocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
-		014707AD2C412462008443AD /* SECRETS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SECRETS.swift; sourceTree = "<group>"; };
 		014707AF2C4125D3008443AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		014707B42C412BE3008443AD /* SECRETS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SECRETS.swift; path = "Arti-v2/SECRETS.swift"; sourceTree = SOURCE_ROOT; };
+		014707B62C412BF0008443AD /* SECRETS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SECRETS.swift; path = Keyboard/SECRETS.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,7 +173,7 @@
 		0147079D2C41215E008443AD /* SECRETS */ = {
 			isa = PBXGroup;
 			children = (
-				0147079F2C41217B008443AD /* SECRETS.swift */,
+				014707B42C412BE3008443AD /* SECRETS.swift */,
 			);
 			path = SECRETS;
 			sourceTree = "<group>";
@@ -189,7 +189,7 @@
 		014707AC2C41245B008443AD /* SECRETS */ = {
 			isa = PBXGroup;
 			children = (
-				014707AD2C412462008443AD /* SECRETS.swift */,
+				014707B62C412BF0008443AD /* SECRETS.swift */,
 			);
 			path = SECRETS;
 			sourceTree = "<group>";
@@ -295,10 +295,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				014707972C412142008443AD /* OpenAIService.swift in Sources */,
+				014707B52C412BE3008443AD /* SECRETS.swift in Sources */,
 				014707782C4120E6008443AD /* MainTabView.swift in Sources */,
 				014707762C4120E6008443AD /* Arti_v2App.swift in Sources */,
 				014707AB2C412228008443AD /* LocalizedString.swift in Sources */,
-				014707A02C41217B008443AD /* SECRETS.swift in Sources */,
 				0147079A2C412150008443AD /* TranslateView.swift in Sources */,
 				0147079C2C412158008443AD /* TranslateViewModel.swift in Sources */,
 			);
@@ -311,7 +311,7 @@
 				014707A42C41219D008443AD /* KeyboardView.swift in Sources */,
 				014707A22C412198008443AD /* Extension+UIView.swift in Sources */,
 				014707A82C4121A9008443AD /* OpenAIService.swift in Sources */,
-				014707AE2C412462008443AD /* SECRETS.swift in Sources */,
+				014707B72C412BF0008443AD /* SECRETS.swift in Sources */,
 				0147078A2C4120F7008443AD /* KeyboardViewController.swift in Sources */,
 				014707A62C4121A2008443AD /* KeyboardViewModel.swift in Sources */,
 			);
